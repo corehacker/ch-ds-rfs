@@ -1,0 +1,21 @@
+language: c
+
+compiler:
+  - gcc
+
+before_script:
+  - git clone https://github.com/corehacker/ch-pal.git
+  - cd ch-pal && autoreconf --install && ./configure && make && sudo make install && cd ..
+  - git clone https://github.com/corehacker/ch-utils.git
+  - cd ch-utils && autoreconf --install && ./configure && make && sudo make install && cd ..
+  - git clone https://github.com/corehacker/ch-sockmon.git
+  - cd ch-sockmon && autoreconf --install && ./configure && make && sudo make install && cd ..
+
+script: |
+  autoreconf --install
+  ./configure
+  make
+  
+notifications:
+  email:
+    - 123sandy@gmail.com
