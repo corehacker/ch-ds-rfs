@@ -1,0 +1,2 @@
+SUBDIRS = ch-rfs
+ACLOCAL_AMFLAGS = -I m4
